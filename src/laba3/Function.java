@@ -10,31 +10,31 @@ package laba3;
  * @author alexey
  */
 public class Function {
-    int x;
-    int y;
+    double x;
+    double y;
 
     public Function() {
         
     }
 
-    public Function(int x, int y) {
+    public Function(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 
-    public void setX(int x) {
+    public void setX(double x) {
         this.x = x;
     }
 
-    public void setY(int y) {
+    public void setY(double y) {
         this.y = y;
     }
 }

@@ -10,7 +10,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 /**
  *
@@ -22,6 +21,7 @@ public class GraficComponent {
     VBox vBox;
     double width;
     double height;
+    int scale = 25;
     
     public GraficComponent(double width, double height){
         this.width = width;
@@ -47,7 +47,6 @@ public class GraficComponent {
     }
     
     private void writeNumbers(){
-        int scale = 25;
         double x = width/2;
         double y = height/2;
         while(x < width){
@@ -74,7 +73,14 @@ public class GraficComponent {
         }
     }
     
-    public void paintGrafic(List<Function> list){
-        
+    public void printGrafic(List<Function> list){
+        for(Function point : list){
+            graphicsContext.fillOval(width/2 + point.getX()*scale,
+                    height/2 - point.getY()*scale, 1, 1);
+        }
+    }
+
+    public double getWidth() {
+        return width;
     }
 }
